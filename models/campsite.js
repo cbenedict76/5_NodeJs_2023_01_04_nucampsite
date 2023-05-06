@@ -38,14 +38,14 @@ const campsiteSchema = new Schema({
         type: String,
         required: true,
     },
-    eelvation: {
+    elevation: {
         type: Number,
         required: true
     },
     cost: {
         type: Currency,
         required: true,
-        type: Boolean,
+        min: 0,
     },
     featured: {
         type: Boolean,

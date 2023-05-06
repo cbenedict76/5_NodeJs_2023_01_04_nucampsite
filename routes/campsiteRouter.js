@@ -27,7 +27,7 @@ campsiteRouter.route('/')
     res.statusCode = 403;
     res.end(`PUT operation not supported on /campsites`);
 })
-.delete((req, res) => {
+.delete((req, res, next) => {
     Campsite.deleteMany()
     .then(response => {
         res.statusCode = 200;
@@ -35,7 +35,6 @@ campsiteRouter.route('/')
         res.json(response);
     })
     .catch(err => next(err));
-    res.end(`Deleting all campsites`);
 });
 
 campsiteRouter.route('/:campsiteId')
