@@ -22,7 +22,6 @@ const partnerSchema = new Schema({
         type: String,
         required: true
     },
-    partners: [partnerSchema]
 }, {
     timestamps: true
 });

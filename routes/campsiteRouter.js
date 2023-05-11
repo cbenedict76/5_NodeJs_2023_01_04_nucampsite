@@ -16,7 +16,6 @@ campsiteRouter.route('/')
 .post((req, res, next) => {
     Campsite.create(req.body)
     .then(campsite => {
-        console.log('Campsite Created ', campsite);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(campsite);
@@ -71,9 +70,6 @@ campsiteRouter.route('/:campsiteId')
     })
     .catch(err => next(err));
 });
-
-
-
 
 campsiteRouter.route('/:campsiteId/comments')
 .get((req, res, next) => {
@@ -215,6 +211,5 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
     })
     .catch(err => next(err));
 });
-
 
 module.exports = campsiteRouter;
