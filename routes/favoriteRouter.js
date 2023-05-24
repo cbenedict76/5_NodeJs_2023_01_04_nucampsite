@@ -120,11 +120,6 @@ favoriteRouter.route('/:campsiteId')
             if (index >= 0) {
                 favorite.campsites.splice(index, 1);
             }
-
-            /* can alternatively use filter as below, instead of using indexOf/splice, 
-               but make sure to use loose inequality OR do fav.toString() before comparing: */
-            //favorite.campsites = favorite.campsites.filter(fav => fav.toString() !== req.params.campsiteId);
-
             favorite.save()
             .then(favorite => {
                 console.log('Favorite Campsite Deleted!', favorite);
